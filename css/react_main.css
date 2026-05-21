@@ -1,0 +1,1146 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Noto+Serif+KR:wght@200..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,*:after, *:before {box-sizing: border-box;}
+a {text-decoration: none; color: #000 }
+body {
+  background: #000;
+}
+/* #################### 메인 히어로 #################### */
+
+/* ### Background ### */
+.hero {
+  width: 100%;
+  position: relative;
+}
+
+/* 배경이미지 */
+.hero div { 
+  width: 100%;
+}
+
+.hero div img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 배경 타이틀 */
+.hero .title {
+  position: absolute;
+  top: 33%; left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 8rem;
+  font-family: "Raleway";
+  font-weight: 150;
+}
+
+/* ### 상단 내비게이션 ### */
+.top_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+}
+
+/* 로고 */
+.top_header h1 { 
+  width: 100px;
+}
+.top_header h1 img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 메뉴 텍스트 */
+.top_header ul li a {
+  font-size: 1.3rem;
+  font-family: "Cormorant Garamond";
+  font-weight: 300;
+  color: #fff;
+}
+
+/* 왼쪽 내비 */
+.top_left_nav ul { 
+  width: 100%;
+  display: flex;
+  gap: 100px;
+}
+
+/* 오른쪽 내비 */
+.top_right_nav ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+/* 아이콘 */
+
+.top_right_nav ul li img {
+  width: 25px;
+  vertical-align: middle;
+}
+
+/* 검색창 */
+.search_input {
+  width: 0;
+  height: 30px;
+  opacity: 0;
+  padding-left: 0;
+
+  border: rgb(140, 140, 140) solid 1px;
+  background: none;
+  font-family: "Raleway";
+  letter-spacing: 1px;
+
+  overflow: hidden;
+  outline: none;
+  transition: width 0.35s ease, opacity 0.35s ease, padding-left 0.35s ease;
+}
+
+.search_input::placeholder {
+  color: #b9b9b9;;
+}
+
+.scroll_header .search_input {
+  border: #404040 solid 1px;
+}
+
+.scroll_header .search_input::placeholder {
+  color: #282828;
+}
+
+/* JS가 open 클래스 붙이면 열림 */
+.search_input.open {
+  width: 170px;
+  opacity: 1;
+  padding-left: 10px;
+}
+
+/* ################# 스크롤 시 등장 내비게이션 ################### */
+.scroll_header {
+  width: 100%; height: fit-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(7px);
+
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+/* hero 벗어나면 JS가 show 클래스 붙임 */
+.scroll_header.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* 로고 */
+.scroll_header h1 { 
+  width: 100px;
+}
+.scroll_header h1 img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 메뉴 텍스트 */
+.scroll_header ul li a {
+  font-size: 1.3rem;
+  font-family: "Cormorant Garamond";
+  font-weight: 300;
+  color: #000;
+}
+
+/* 왼쪽 내비 */
+.scroll_left_nav ul { 
+  width: 100%;
+  display: flex;
+  gap: 100px;
+}
+
+/* 오른쪽 내비 */
+.scroll_right_nav ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+/* 아이콘 */
+
+.scroll_right_nav ul li img {
+  width: 25px;
+  vertical-align: middle;
+}
+
+
+/* ################### Philosophy #################### */
+
+/* 비디오 */
+.philosophy video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 비디오 위에 반투명 오버레이 */
+.philosophy::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* 전체 */
+
+.philosophy {
+  position: relative;
+  width: 100%;
+ 
+  overflow: hidden;
+
+  text-align: center;
+  padding: 150px;
+  font-family: "Raleway";
+  color: #E3E3E3;
+}
+
+/* 텍스트 전체 */
+.Ptxt_main,
+.Ptxt_sub {
+  position: relative;
+  z-index: 1;
+}
+
+.Ptxt_main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.Ptxt_main h1 {
+  font-size: 7rem;
+  font-weight: 200;
+}
+
+/* divider */
+.Pdivider {
+  width: 55%;
+  height: 2px;
+  margin: 30px auto;
+  background: rgb(255, 255, 255,0.2);
+}
+
+.Ptxt_main p {
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.Ptxt_sub {
+  font-size: 1.7rem;
+  font-weight: 100;
+  margin-top: 100px;
+  line-height: 2.7;
+}
+
+
+
+/* ### Philosophy 등장효과 ### */
+.philosophy .ph_item {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.philosophy .ph_item.ph_show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ################# Curated space################# */
+.curated_space { 
+  width: 100%;
+  padding: 270px 0;
+  position: relative;
+}
+
+.autoflow_image {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.autoflow_image li a {
+  display: block;
+  width: 400px;
+  height: 670px;
+}
+
+.autoflow_image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ### 검정 박스 ### */
+.front_box {
+  width: 430px; height: 1000px;
+  background: rgb(0, 0, 0,0.75);
+  backdrop-filter: blur(7px);
+  text-align: center;
+  font-family: "Raleway";
+  padding: 160px 20px;
+  position: absolute;
+  top: 0; right: 20%;
+  color: #E3E3E3;
+  box-shadow: -15px 0 20px rgba(0, 0, 0, 0.25),
+   15px 0 20px rgba(0, 0, 0, 0.25);
+}
+
+/* 텍스트 */
+.F_txt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.F_txt h2 {
+  font-weight: 200;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.F_txt .Fdivider {
+  width: 95%;
+  height: 1px;
+  background: rgb(255, 255, 255,0.4);
+  margin: 20px auto;
+}
+
+.F_txt p { 
+  line-height: 2.5;
+  font-size: 1.3rem;
+  font-weight: 200;
+  text-align: left;
+  width: 85%;
+  margin-top: 40px;
+}
+
+/* 버튼 */
+.front_box .Cbtn {
+  background: none;
+  border:#E3E3E3 solid 1px;
+  color: #E3E3E3;
+  width: 300px;
+  height: 60px;
+  margin: 60px auto 0;
+  font-size: 1.3rem;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front_box .Cbtn:hover {
+  color: #000;
+  background: rgb(255, 255, 255,0.6);
+  border: none;
+  font-weight: 300;
+}
+
+/* ####################### Brand image track ######################### */
+.brand { 
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  padding: 0 0 250px 0;
+  justify-content: space-between;
+}
+
+/* ### 왼쪽 이미지 탭 전체 wrap ### */
+.brand_left { 
+  width: 50%;
+  height: 720px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 각 브랜드 이미지 track */
+.image_track {
+  display: none;
+  width: 100%;
+  height: 720px;
+  overflow: visible;
+  transition: transform 0.45s ease;
+}
+
+.image_track.active {
+  display: flex;
+}
+
+/* 개별 이미지 박스 */
+.image_track > div {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 720px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 이미지 */
+.image_track > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Lasvit hover 이미지는 처음에 무조건 숨김 */
+.image_track[data-brand="lasvit"] .hover {
+  display: none;
+}
+
+/* 화살표 */
+.brand .brand_left .arrow a {
+  width: 40px;
+  height: 40px;
+  background: none;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.brand .brand_left .arrow a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 이전 버튼 */
+.brand .arrow .prev {
+  left: 5px;
+}
+
+/* 다음 버튼 */
+.brand .arrow .next {
+  right: 5px;
+}
+
+/* ### 오른쪽 버튼 탭 ### */
+.button_area {
+  width: 50%;
+}
+
+/* 개별 탭 */
+.button_area .brand_tab {
+  background: #282828;
+  width: 100%;
+  height: 180px;
+  border-bottom: #9F9F9F solid 1px;
+  padding: 25px 0 0 25px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.35s ease;
+}
+
+.button_area .brand_tab.active {
+  background: #3A352B;
+}
+
+.button_area .brand_tab:last-child {
+  border-bottom: none;
+}
+
+/* 탭-브랜드 이름 */
+.brand .brand_tab p {
+  font-size: 2.5rem;
+  font-family: "Cormorant Garamond";
+  color: #fff;
+}
+
+/* 탭-번호 */
+.brand .brand_tab p span {
+  color: #D1B886;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+/* 탭-SPACE */
+.brand .brand_tab small {
+  color: #B7B7B7;
+  font-family: "Cinzel";
+  font-size: 1.3rem;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+
+/* 브랜드별 마우스 효과 */
+.brand_fx {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: screen;
+  --x: 50%;
+  --y: 50%;
+}
+
+.brand_fx.on {
+  opacity: 1;
+}
+
+/* Lasvit 조명 */
+.brand_fx.lasvit {
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    rgba(255, 230, 170, 0.28),
+    rgba(255, 220, 150, 0.08) 18%,
+    transparent 42%
+  );
+}
+
+/* Glas 프리즘 */
+/* .brand_fx.glas {
+  background:
+    radial-gradient(circle at var(--x) var(--y), rgba(255,255,255,0.26), transparent 18%),
+    conic-gradient(
+      from 140deg at var(--x) var(--y),
+      rgba(255,120,180,0.12),
+      rgba(120,210,255,0.14),
+      rgba(255,245,160,0.1),
+      transparent 10%
+    );
+  backdrop-filter: blur(1px);
+} */
+
+/* Desalto 금속 하이라이트 - 약하게 */
+/* .brand_fx.desalto {
+  background: linear-gradient(
+    115deg,
+    transparent 5%,
+    rgba(255,255,255,0.08) 50%,
+    transparent 95%
+  );
+  transform: translateX(-120%);
+}
+
+.brand_fx.desalto.on {
+  animation: metalSweep 1.6s ease forwards;
+}
+
+@keyframes metalSweep {
+  to {
+    transform: translateX(120%);
+  }
+} */
+
+/* OFYR 열기 */
+.brand_fx.ofyr {
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    rgba(255, 145, 70, 0.18),
+    transparent 35%
+  );
+  backdrop-filter: blur(2px);
+}
+
+
+/* #################### DESIGNERS####################### */
+.designer {
+  width: 100%;
+  padding: 150px 0;
+  background: #282828;
+  overflow: hidden;
+}
+
+/* 타이틀 */
+.designer h2 {
+  font-family: "Raleway";
+  font-weight: 200;
+  font-size: 5.5rem;
+  color: #fff;
+  margin: 0 0 100px 70px;
+}
+
+/* 디자이너 이미지 카드 리스트 */
+.designer ul {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  transition: transform 0.35s ease;
+}
+
+/* 개별 이미지 카드(+호버 박스) */
+.designer ul li {
+  flex: 0 0 20vw;
+  position: relative;
+  perspective: 900px;
+  overflow: hidden;
+}
+
+/* 디자이너 카드 */
+.designer ul .designer_card {
+  width: 100%;
+  height: 100%;
+}
+
+/* 디자이너 카드 이미지 */
+.designer ul .designer_card img { 
+  width: 100%;
+  display: block;
+}
+
+/* ### 호버박스 ### */
+.designer .hoverbox {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  padding: 100px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: rgba(184, 184, 184, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translate(-50%, -50%) rotateY(180deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease,
+    transform 0.5s ease;
+
+  font-family: "Raleway";
+}
+
+/* li에 호버하면 180도 돌아오며 등장 */
+.designer ul li:hover .hoverbox {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) rotateY(0deg);
+}
+
+/* ### 호버박스 텍스트 ### */
+.designer .hoverbox h3,
+.designer .hoverbox p {
+  margin: 0;
+}
+
+/* 이름 */
+.designer .hoverbox h3 {
+  font-family: "Cormorant Garamond";
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* brand */
+.designer .hoverbox .hover_txt1 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #6F6A60;
+}
+
+/* divider */
+.designer .hoverbox .Hdivider {
+  width: 45%;
+  height: 1px;
+  background: #D1B886;
+  margin: 20px 0;
+}
+
+/* 브랜드 이름 */
+.designer .hoverbox .hover_txt2 {
+  font-size: 1.3rem;
+  color: #3A352B;
+  font-weight: 300;
+  margin-bottom: 6px;
+}
+
+/* 버튼 */
+.designer .hoverbox .Hbtn {
+  width: 230px;
+  height: 45px;
+  border: #1f1f1f solid 1px;
+  margin-top: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.1rem;
+  color: #1f1f1f;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* 버튼 호버 */
+.designer .hoverbox .Hbtn:hover {
+  color: #000;
+  background: rgba(0, 0, 0, 0.25);
+  border-color: transparent;
+}
+
+/* ### 드래그 인풋 ### */
+.designer .drag {
+  appearance: none;
+  -webkit-appearance: none;
+  display: block;
+  width: 95%;
+  margin: 70px auto 0;
+  background: transparent;
+  outline: none;
+}
+
+/* 막대기 */
+.designer .drag::-webkit-slider-runnable-track {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* thumb */
+.designer .drag::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 30px;
+  height: 16px;
+  border-radius: 5px;
+  background: #cecece;
+  margin-top: -7px;
+  cursor: pointer;
+}
+
+
+/* #################### Material Refined ####################### */
+/* philosophy+material 공통 */
+/* ################ scroll reveal effect ################ */
+.reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.left {
+  transform: translateX(-45px);
+}
+
+.reveal.right {
+  transform: translateX(45px);
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.material {
+  width: 100%;
+  padding: 200px 0 0;
+}
+
+/* 타이틀 */
+.material > h2 {
+  font-size: 5.5rem;
+  color: #fff;
+  font-family: "Raleway";
+  font-weight: 200;
+  margin-left: 100px;
+  margin-bottom: 100px;
+} 
+
+/* ### 데살토 ### */
+/* 데살토 전체 wrap */
+.desalto_wrap {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom:200px ;
+}
+
+/* 데살토 타이틀 */
+.desalto_wrap h2 {
+  font-size: 5.5rem;
+  font-family: "Raleway";
+  font-weight: 550;
+  color:#fff;
+  text-align: center;
+  transform: translateY(40px);
+  z-index: 10;
+  position: relative;
+}
+
+/* ### 데살토 그리드 ### */
+.desalto_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* 텍스트 전체 */
+.material p {
+  color: #e6e6e6;
+  font-size: 2.3rem;
+  font-family: "Cormorant Garamond";
+  line-height: 2.3;
+  width: 80%;
+  justify-self: center;
+}
+
+/* 이미지 액자 */
+.desalto_grid > div {
+  width: 85%;
+  overflow: hidden;
+  justify-self: center;
+  aspect-ratio: 1 / 1.2;
+}
+
+/* 이미지 */
+.desalto_grid > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 왼쪽 위 이미지 */
+.desalto_grid .grid1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  
+}
+
+/* 오른쪽 위 텍스트 */
+.desalto_grid .grid2 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  padding-top: 110px;
+}
+
+/* 왼쪽 아래 텍스트 */
+.desalto_grid .grid3 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  padding-top: 100px;
+}
+
+/* 오른쪽 중간 이미지 */
+.desalto_grid .grid4 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  aspect-ratio: 1 / 1.32;
+  margin-top: -130px;
+}
+
+/* 마지막 이미지 */
+.desalto_grid .grid5 {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+  width: 90%;
+  aspect-ratio: 1.75 / 0.9;
+  margin-top: 100px;
+}
+
+/* ### 글라스 ### */
+.glas_wrap {
+  width: 100%;
+  background: #282828;
+  padding: 200px 0;
+}
+
+/* ### 글라스 그리드 ### */
+.glas_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* 글라스 타이틀 */
+.glas_wrap h2 {
+  font-size: 5.5rem;
+  font-family: "Raleway";
+  font-weight: 550;
+  color:#fff;
+  text-align: left;
+  padding: 0 100px 100px;
+}
+
+/* 이미지 액자 */
+.glas_grid > div {
+  width: 75%;
+  overflow: hidden;
+  aspect-ratio: 1 / 1.2;
+}
+
+/* 이미지 */
+.glas_grid > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 왼쪽 위 텍스트 */
+.glas_grid .grid1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  justify-self: center; 
+  padding-top: 100px;
+}
+
+/* 오른쪽 위 이미지 */
+.glas_grid .grid2 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  justify-self: center;
+  
+}
+
+/* 왼쪽 아래 이미지 */
+.glas_grid .grid3 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  justify-self: center;
+  padding-top: 100px;
+}
+
+/* 오른쪽 아래 텍스트 */
+.glas_grid .grid4 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  justify-self: center;
+  padding-top: 200px;
+}
+
+/* ######################## Be Inspired######################## */
+.inspire {
+  width: 100%;
+  padding: 150px 0 400px;
+  color: #fff;
+  font-family: "Raleway";
+  overflow: hidden;
+}
+
+/* 타이틀 */
+.inspire h2 {
+  font-size: 5.5rem;
+  font-weight: 200;
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+
+/* 텍스트 */
+.inspire p {
+  font-size: 1.7rem;
+  color: #fff;
+  font-weight: 100;
+  margin-left: 100px;
+  margin-bottom: 90px;
+}
+
+/* 이미지 카드 리스트 */
+.inspire ul {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: max-content;
+  transition: transform 0.45s ease;
+  user-select: none;
+  cursor: grab;
+}
+
+/* 이미지 카드 */
+.inspire ul li {
+  position: relative;
+  flex: 0 0 58vw;
+  aspect-ratio: 16 / 8.5;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* 이미지 */
+.inspire ul li img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* 비활성 오버레이 */
+.inspire ul li::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* 활성 이미지는 밝게 */
+.inspire ul li.active::after {
+  opacity: 0;
+}
+
+.inspire ul.dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+/* ######################### SHOW ROOM ########################## */
+
+/* 보에 showroom */
+.showroom {
+  width: 100%;
+  position: relative;
+}
+
+/* 배경이미지 */
+.showroom .showroom_image img {
+  width: 100%;
+  height: 880px;
+  object-fit: cover;
+  display: block;
+}
+
+/* 타이틀 */
+.showroom h2 {
+  font-family: "Cinzel";
+  font-weight: 500;
+  color: rgb(61, 61, 61,0.83);
+  font-size: 6rem;
+  position: absolute;
+  top: 7%; left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+/* info박스 */
+.showroom .info {
+  width: 700px;
+  height: 100%;
+  background: rgb(186, 186, 186,0.5);
+  backdrop-filter: blur(10px);
+
+  position: absolute;
+  top: 0; left: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  color: #3d3d3d;
+  font-family: "Noto Serif KR";
+  font-size: 1.3rem;
+
+}
+
+/* info 텍스트 */
+.showroom .info h3 {
+  color: #3A352B;
+  font-size: 3rem;
+  font-family: "Cormorant Garamond";
+  font-weight: 550;
+  border-top: #686868 solid 1px;
+  border-bottom: #686868 solid 1px;
+  width: 300px;
+  text-align: center;
+  padding: 15px 0; 
+  margin:80px 0 50px;
+}
+
+.showroom .info address {
+  font-style: normal;
+}
+
+/* 버튼 */
+.showroom .Ibtn {
+  width: 200px;
+  height: 50px;
+  border: solid #2C2C2C 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Raleway";
+  margin-top: 50px;
+}
+
+.showroom .Ibtn:hover {
+  border: none;
+  background: rgb(255, 255, 255,0.3);
+}
+
+
+/* ################# 푸터###################### */
+footer {
+  width: 100%;
+  border-top: rgb(209, 184, 134,0.6) solid 1px;
+  padding: 10px 0 20px;
+}
+
+/* wrap */
+footer div {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* 로고 */
+footer div h1 {
+  width: 100px;
+  margin: 0 auto;
+}
+
+footer div h1 img {
+  width: 100%;
+  display: block;
+}
+
+/* 텍스트 */
+footer ul li {
+  color: #A2A2A2;
+  font-family: "Noto Serif KR";
+
+}
